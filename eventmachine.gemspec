@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.authors = ["Francis Cianfrocca", "Aman Gupta"]
   s.email   = ["garbagecat10@gmail.com", "aman@tmm1.net"]
 
-  s.files = `git ls-files`.split("\n")
+  s.files = Dir.glob("{lib,ext}/**/*")
   s.extensions = ["ext/extconf.rb", "ext/fastfilereader/extconf.rb"]
 
   s.add_development_dependency 'rake-compiler', '~> 0.8.3'
@@ -33,5 +33,5 @@ of EventMachine is to enable programs to easily interface with other programs
 using TCP/IP, especially if custom protocols are required."
 
   s.rdoc_options = ["--title", "EventMachine", "--main", "README.md", "-x", "lib/em/version", "-x", "lib/jeventmachine"]
-  s.extra_rdoc_files = ["README.md"] + `git ls-files -- docs/*`.split("\n")
+  s.extra_rdoc_files = ["README.md"] + Dir.glob("docs/**/*")
 end
